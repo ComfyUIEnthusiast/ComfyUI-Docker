@@ -7,13 +7,13 @@ services:
     volumes:
         - type: volume
           source: comfyui_models
-          target: /workspace/models
+          target: /workspace/ComfyUI/models
         - type: volume
           source: comfyui_custom_nodes
-          target: /workspace/custom_nodes
+          target: /workspace/ComfyUI/custom_nodes
         - type: volume
           source: comfyui_user
-          target: /workspace/user
+          target: /workspace/ComfyUI/user
         - ./output:/workspace/ComfyUI/output
         - ./models:/workspace/importModels
     deploy:
