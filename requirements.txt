@@ -1,0 +1,6 @@
+jupyter
+notebook
+opencv-python
+imageio-ffmpeg
+sageattention
+diffusers

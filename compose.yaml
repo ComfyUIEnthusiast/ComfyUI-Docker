@@ -1,0 +1,38 @@
+services:
+  server:
+    image: comfyui
+    ports:
+      - ${COMFYUI_PORT}:8188
+      - ${JUPYTER_PORT}:8888
+    volumes:
+        - type: volume
+          source: comfyui_models
+          target: /workspace/models
+        - type: volume
+          source: comfyui_custom_nodes
+          target: /workspace/custom_nodes
+        - type: volume
+          source: comfyui_user
+          target: /workspace/user
+        - ./output:/workspace/ComfyUI/output
+        - ./models:/workspace/importModels
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    environment:
+     - COMFYUI_PORT=${COMFYUI_PORT}
+     - JUPYTER_PORT=${JUPYTER_PORT}
+     - JUPYTER_TOKEN=${JUPYTER_TOKEN}
+    build:
+      context: .
+volumes:
+    comfyui_models:
+        name: comfyui_models
+    comfyui_custom_nodes:
+        name: comfyui_custom_nodes
+    comfyui_user:
+        name: comfyui_user

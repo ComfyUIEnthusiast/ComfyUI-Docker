@@ -1,0 +1,24 @@
+#Rename this to extra_model_paths.yaml and ComfyUI will load it
+
+comfyui:
+    base_path: |
+        /ComfyUI
+        /workspace
+    # You can use is_default to mark that these folders should be listed first, and used as the default dirs for eg downloads
+    #is_default: true
+    checkpoints: |
+        models/checkpoints/
+    clip: models/clip/
+    clip_vision: models/clip_vision/
+    configs: models/configs/
+    controlnet: models/controlnet/
+    diffusion_models: |
+                 models/diffusion_models
+    embeddings: models/embeddings/
+    loras: models/loras/
+    text_encoders: |
+        models/text_encoders
+    upscale_models: |
+        models/upscale_models/
+    vae: | 
+        models/vae
