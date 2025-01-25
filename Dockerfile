@@ -22,9 +22,6 @@ ENV PATH="/workspace/comfyenv/bin:$PATH"
 ADD requirements.txt .
 RUN pip install -r requirements.txt
 WORKDIR /workspace/ComfyUI
-RUN mkdir /workspace/custom_nodes
-RUN mkdir /workspace/models
-RUN mkdir /workspace/user
 RUN pip install -r requirements.txt
 
 FROM base as stage1
