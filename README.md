@@ -21,7 +21,7 @@ To build the docker container:
     docker compose build
 
 ## Step 4:
-Add any models you want to be copied into the docker volumes into their appropriate directory of the importModels folder
+Add any models you want to be copied into the docker volumes into their appropriate directory of the models folder
 
 ## Step 5:
 Run the container (-d in detached mode):
