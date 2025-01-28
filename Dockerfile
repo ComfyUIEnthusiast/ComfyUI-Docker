@@ -24,6 +24,7 @@ RUN pip install -r requirements.txt
 WORKDIR /workspace/ComfyUI
 RUN pip install -r requirements.txt
 
+
 FROM base as stage1
 ENV COMFYUI_PORT=$COMFYUI_PORT
 ENV JUPYTER_PORT=$JUPYTER_PORT
