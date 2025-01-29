@@ -29,6 +29,8 @@ services:
      - JUPYTER_TOKEN=${JUPYTER_TOKEN}
     build:
       context: .
+      dockerfile: dockerfile
+      target: prod
 volumes:
     comfyui_models:
         name: comfyui_models
