@@ -9,6 +9,7 @@ RUN apt-get update
 RUN apt-get install -y git 
 RUN apt-get install -y git-lfs ffmpeg libglu1-mesa-dev
 RUN apt-get install -y sudo
+RUN apt-get install -y build-essential
 
 #clone ComfyUI
 RUN git clone https://github.com/comfyanonymous/ComfyUI.git /workspace/ComfyUI
@@ -25,7 +26,7 @@ WORKDIR /workspace/ComfyUI
 RUN pip install -r requirements.txt
 
 
-FROM base as prod
+FROM base as stage1
 ENV COMFYUI_PORT=$COMFYUI_PORT
 ENV JUPYTER_PORT=$JUPYTER_PORT
 ENV JUPYTER_TOKEN=$JUPYTER_TOKEN
