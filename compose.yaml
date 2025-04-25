@@ -1,8 +1,6 @@
 services:
   server:
     image: comfyui
-    restart: always
-    ipc: host
     ports:
       - ${COMFYUI_PORT}:8188
       - ${JUPYTER_PORT}:8888
@@ -31,6 +29,8 @@ services:
      - JUPYTER_TOKEN=${JUPYTER_TOKEN}
     build:
       context: .
+      dockerfile: Dockerfile
+      target: prod
 volumes:
     comfyui_models:
         name: comfyui_models
